@@ -38,6 +38,16 @@ ActiveRecord::Schema.define(version: 20160824140003) do
     t.index ["term_id"], name: "index_terms_categories_on_term_id", using: :btree
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "nickname"
+    t.string   "access_token"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   add_foreign_key "terms_categories", "categories"
   add_foreign_key "terms_categories", "terms"
 end

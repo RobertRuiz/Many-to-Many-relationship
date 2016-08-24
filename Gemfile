@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# declared a Ruby version
+ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -25,10 +27,18 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# Bootstrap
+gem "font-awesome-rails"
+gem 'bootstrap-social-rails'
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
+gem 'bootstrap-generators'
+gem 'record_tag_helper'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -46,3 +56,10 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Authentication via oauth
+gem 'omniauth'
+gem 'omniauth-github'
+
+# Environment
+gem 'dotenv-rails'
