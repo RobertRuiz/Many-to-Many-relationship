@@ -1,35 +1,5 @@
 <% if logged_in? %>
-    <div class="last_5">
-      <p>
-      <h3>The most recent 5 terms added are:</h3>
-      <table class="table">
-      <% @terms.each do |term| %>
-        <%= link_to term.name, term_path(term) %></a>
-        <br>
-      <% end %>
-      </table>
-      </p>
-
-
-      <p>
-        <%= link_to 'Add a new term', new_term_path, class: "btn btn-primary" %>
-          <br>
-          <br>
-        <%= link_to 'See all existing terms', terms_path, class: "btn btn-primary" %>
-      </p>
-    <br>
-    </div>
-    <p>
-    <div class="categories_table">
-      <h3>The current categories are:</h3>
-      <% @categories.each do |category| %>
-        <%= link_to category.name, category_path(category) %></a>
-        <br>
-      <% end %>
-      <br>
-      <%= link_to 'Add a new category', new_category_path, class: "btn btn-primary" %>
-    </p>
-    <br>
-    </div>
-
+  Logged in as: <%= current_user.name %> | <%= link_to 'Logout', logout_path %>
+<% else %>
+  <%= link_to 'Login', login_path %> | <%= link_to 'Signup', signup_path %>
 <% end %>
