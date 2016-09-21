@@ -1,6 +1,11 @@
 class TermsController < ApplicationController
   before_action :set_term, only: [:show, :edit, :update, :destroy]
 
+  def index
+     @terms = params[:search] ? Term.where("name LIKE ? or definition LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%") :
+                                Term.all.order(:name)
+   end
+   
   # GET /terms
   # GET /terms.json
   def index
